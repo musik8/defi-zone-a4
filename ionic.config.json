@@ -1,0 +1,7 @@
+{
+  "name": "DeFi_Zone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
