@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Protocol</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-button  slot="primary" (click)="addToFav()" >
+      
+      <!-- <ion-icon name="add-circle-outline" slot="icon-only"></ion-icon>
+      <ion-icon name="close"></ion-icon> -->
+      <ion-icon name="{{(fav == undefined)  ? 'add-circle-outline' : 'close'}}"></ion-icon>
+
+    </ion-button>
+ 
+    
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  
+
+  <!-- Else loading... -->
+  <ion-card *ngIf="!protoDetail">
+    <ion-card-header><ion-card-header> LOADING.....</ion-card-header> </ion-card-header>  
+   
+  </ion-card>
+  <ion-card *ngIf="protoDetail">
+    <div style="display: flex; align-items: center;justify-content: center;">
+      <img src="{{protoDetail.logo}}" />
+  </div>
+    
+    <ion-card-header>
+      <ion-card-subtitle>Type: {{protoDetail.category}}</ion-card-subtitle>
+      <ion-card-subtitle>Chain: {{protoDetail.chain}}</ion-card-subtitle>
+      <ion-card-title>
+        {{protoDetail.name}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="plot" text-center>
+      {{ protoDetail.description }}
+    </ion-card-content>
+    <ion-card-content class="plot" text-center>
+      {{ protoDetail.methodology }}
+    </ion-card-content>
+ 
+  </ion-card> 
+
+<ion-card *ngIf="protoDetail">
+  <ion-card-header>
+    <ion-card-subtitle>USD Value Locked</ion-card-subtitle>
+    <ion-card-title>${{protoValue }}</ion-card-title>
+  </ion-card-header>  
+  <ion-card-header>
+    <ion-card-subtitle>Native Token Value</ion-card-subtitle>
+    <ion-card-title> {{protoDetail.gecko_id}}</ion-card-title>
+    <ion-card-title>${{nativeTokenValue}}</ion-card-title>
+  </ion-card-header>  
+  
+</ion-card>
+
+<ion-card *ngIf="protoDetail">
+  <ion-card-header>
+    <ion-card-subtitle>Twitter</ion-card-subtitle>
+    <ion-card-title>#{{protoDetail.twitter }}</ion-card-title>
+    <ion-card-subtitle>Website</ion-card-subtitle>
+    <ion-card-title>{{protoDetail.url}}</ion-card-title>
+  </ion-card-header>  
+  
+  
+</ion-card>
+<ion-list *ngIf="fav">
+    
+    
+  <ion-row>
+    <ion-col>
+      <ion-button color="primary" shape="full" expand="block" [routerLink]="['./','token']">Add Token </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-list-header>
+    List Of User Coins
+  </ion-list-header>
+  <ion-item lines="full"
+  >
+  <img [src]="'https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880'" height="60" style="border-radius: 40%; padding-top:10px; padding-right: 10px; padding-bottom: 10px;"  alt=""> 
+  <ion-label >
+
+  <h2>Etherium</h2>
+  <h4><b>Amount:</b> 2.3</h4>
+  <h4><b>Total Value:</b> $10193.03</h4>
+  </ion-label>
+
+  </ion-item>
+ 
+</ion-list>
+
+
+</ion-content>

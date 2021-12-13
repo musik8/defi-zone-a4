@@ -1,0 +1,17 @@
+
+
+// Creation Relationship
+CREATE TABLE IF NOT EXISTS FavDefi(
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    lama_id TEXT
+);
+CREATE TABLE IF NOT EXISTS SavedTokens(
+    ID INTEGER PRIMARY KEY AUTOINCREMENT
+    geckoID TEXT,
+    amount NUMBER,
+    FavID REFERENCES FavDefi(ID)
+)
+     
+
+
+

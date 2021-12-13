@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'defi/:id',
+    loadChildren: () => import('./defi/defi.module').then( m => m.DefiPageModule)
+  },
+  {
+    path: 'token',
+    loadChildren: () => import('./token/token.module').then( m => m.TokenPageModule)
+  },
 ];
 
 @NgModule({

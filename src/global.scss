@@ -24,3 +24,38 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+	
+		--ion-background-color: #5c5c5c;
+		--ion-background-color-rgb: 92,92,92;
+	
+		--ion-text-color: #ffffff;
+		--ion-text-color-rgb: 255,255,255;
+	
+		--ion-color-step-50: #646464;
+		--ion-color-step-100: #6c6c6c;
+		--ion-color-step-150: #747474;
+		--ion-color-step-200: #7d7d7d;
+		--ion-color-step-250: #858585;
+		--ion-color-step-300: #8d8d8d;
+		--ion-color-step-350: #959595;
+		--ion-color-step-400: #9d9d9d;
+		--ion-color-step-450: #a5a5a5;
+		--ion-color-step-500: #aeaeae;
+		--ion-color-step-550: #b6b6b6;
+		--ion-color-step-600: #bebebe;
+		--ion-color-step-650: #c6c6c6;
+		--ion-color-step-700: #cecece;
+		--ion-color-step-750: #d6d6d6;
+		--ion-color-step-800: #dedede;
+		--ion-color-step-850: #e7e7e7;
+		--ion-color-step-900: #efefef;
+		--ion-color-step-950: #f7f7f7;
+	
+
+	--ion-safe-area-top: 10px;
+	--ion-safe-area-bottom: 10px;
+
+}
+

@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Token</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <ion-list lines="full">
+    <form [formGroup]="findToken" (ngSubmit)="findFormSubmit()">
+      
+      <ion-item>
+        <ion-label position="floating">Token name</ion-label>
+        <ion-input required formControlName="token_name" type="text" required></ion-input>
+      </ion-item>
+      
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">
+            Search
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+       
+    </form>
+
+    
+
+
+  </ion-list>
+  
+</ion-card >
+
+<ion-card *ngIf="tokenResult">
+<ion-list >
+    <ion-item lines="full"  >
+      <ion-label>
+      <h4>{{tokenResult.name}}</h4>
+      <h2>${{tokenValues}} USD</h2>
+      </ion-label>
+    
+    </ion-item>
+    
+
+  </ion-list> 
+</ion-card>
+
+<ion-card *ngIf="tokenResult">
+<ion-list  >
+  <form [formGroup]="calcForm" (ngSubmit)="calcFormSubmit()">
+      
+    <ion-item>
+      <ion-label position="floating">Token Amount</ion-label>
+      <ion-input required formControlName="token_amount" type="text" required></ion-input>
+    </ion-item>
+    
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" shape="full" expand="block">
+          Add
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+
+ 
+   
+  </form>
+</ion-list>
+</ion-card>
+<ion-list *ngIf="tokenCalced">
+ 
+
+  <ion-item lines="full"
+  >
+  <img [src]="tokenResult.image.small" height="60" style="border-radius: 40%; padding-top:10px; padding-right: 10px; padding-bottom: 10px;"  alt=""> 
+  <ion-label >
+    
+  <h2>{{tokenResult.name}}</h2>
+  <h4><b>Amount:</b> {{userAmount}}</h4>
+  <h4><b>Total Value:</b> ${{userValue}} USD</h4>
+  </ion-label>
+
+  </ion-item>
+
+
+
+  <ion-button shape="full" expand="block" (click)="saveToken()">Save Token</ion-button>
+</ion-list>
+
+</ion-content>

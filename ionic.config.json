@@ -1,7 +1,10 @@
 {
   "name": "DeFi_Zone",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }
